@@ -7,6 +7,7 @@ const supabase = require('./supabaseService');
 const app = express();
 app.use(cors());
 app.use(express.json());
+const PORT = process.env.PORT || 3000;
 
 app.post('/send-contract', async (req, res) => {
   try {
@@ -109,4 +110,4 @@ app.post('/test-supabase', async (req, res) => {
   }
 });
 
-app.listen(3000, () => console.log('Server running on 3000'));
+app.listen(PORT, () => console.log('Server running on 3000'));
