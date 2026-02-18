@@ -2,7 +2,8 @@ require('dotenv').config();
 const fs = require('fs');
 const docusign = require('docusign-esign');
 
-const privateKey = fs.readFileSync(process.env.DOCUSIGN_PRIVATE_KEY_PATH);
+// const privateKey = fs.readFileSync(process.env.DOCUSIGN_PRIVATE_KEY_PATH);
+const privateKey = process.env.DOCUSIGN_PRIVATE_KEY.replace(/\\n/g, '\n');
 const supabase = require('./supabaseService');
 
 async function getAccessToken() {
